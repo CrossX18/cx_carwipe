@@ -2,9 +2,9 @@ clientCallbacks = vx.createCallbackProxy()
 
 clientCallbacks.carwipe = function()
     vx.notify({
-        title = 'Info!',
-        message = 'Er is een carwipe gestart! Stap binnen 60 seconden in je voertuig!',
-        type = 'info'
+        title = "Info!",
+        message = "Er is een carwipe gestart! Stap binnen 60 seconden in je voertuig!",
+        type = "info"
     })
     local count = 0
     Citizen.SetTimeout(SharedConfig.carwipeDelay, function()
@@ -15,9 +15,9 @@ clientCallbacks.carwipe = function()
         end
       end
       vx.notify({
-          title = 'Succes!',
-          message = string.format('Er zijn %s voertuigen verwijderd!', count),
-          type = 'success'
+          title = "Succes!",
+          message = string.format("Er zijn %s voertuigen verwijderd!", count),
+          type = "success"
       })
     end)
 end
