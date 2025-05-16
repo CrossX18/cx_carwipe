@@ -1,6 +1,4 @@
-clientCallbacks = vx.createCallbackProxy()
-
-clientCallbacks.carwipe = function()
+vx.registerNetEvent("cx_carwipe:wipe", function()
     vx.notify({
         title = "Info!",
         message = "Er is een carwipe gestart! Stap binnen 60 seconden in je voertuig!",
@@ -8,19 +6,20 @@ clientCallbacks.carwipe = function()
     })
     local count = 0
     Citizen.SetTimeout(SharedConfig.carwipeDelay, function()
-      for vehicle in EnumerateVehicles() do
-        if not IsPedAPlayer(GetPedInVehicleSeat(vehicle, -1)) then
-            DeleteEntity(vehicle)
-            count = count + 1
+        for vehicle in EnumerateVehicles() do
+            if not IsPedAPlayer(GetPedInVehicleSeat(vehicle, -1)) then
+                DeleteEntity(vehicle)
+                count = count + 1
+            end
         end
-      end
-      vx.notify({
-          title = "Succes!",
-          message = string.format("Er zijn %s voertuigen verwijderd!", count),
-          type = "success"
-      })
+        vx.notify({
+            title = "Succes!",
+            message = string.format("Er zijn %s voertuigen verwijderd!", count),
+            type = "success"
+        })
     end)
-end
+end)
+
 
 local entityEnumerator = {
     __gc = function(enum)
