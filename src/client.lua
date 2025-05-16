@@ -7,8 +7,9 @@ vx.registerNetEvent("cx_carwipe", function()
     local count = 0
     Citizen.SetTimeout(SharedConfig.carwipeDelay, function()
         for vehicle in EnumerateVehicles() do
-            if not IsPedAPlayer(GetPedInVehicleSeat(vehicle, -1)) then
-                DeleteEntity(vehicle)
+            local driver = GetPedInVehicleSeat(vehicle, -1)
+            if not IsPedAPlayer(driver) then
+                DeleteVehicle(vehicle)
                 count = count + 1
             end
         end
