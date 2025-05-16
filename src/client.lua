@@ -1,4 +1,4 @@
-vx.registerNetEvent("cx_carwipe:wipe", function()
+vx.registerNetEvent("cx_carwipe", function()
     vx.notify({
         title = "Info!",
         message = "Er is een carwipe gestart! Stap binnen 60 seconden in je voertuig!",
@@ -19,7 +19,6 @@ vx.registerNetEvent("cx_carwipe:wipe", function()
         })
     end)
 end)
-
 
 local entityEnumerator = {
     __gc = function(enum)
