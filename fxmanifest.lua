@@ -6,7 +6,8 @@ author "CrossX"
 
 shared_scripts {
     "config.shared.lua",
-    "@vx_lib/init.lua"
+    "@vx_lib/init.lua",
+    'src/shared.lua'
 }
 
 server_scripts {

@@ -1,3 +1,5 @@
 SharedConfig = {}
 
-SharedConfig.commandGroups = { "group.beheer", "group.hogerop", "group.development" }
+SharedConfig.commandGroups = { "group.beheer", "group.admin" }
+
+SharedConfig.carwipeDelay = 60000

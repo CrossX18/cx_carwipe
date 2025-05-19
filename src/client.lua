@@ -6,7 +6,7 @@ function clientEventBridge.carwipe()
     })
 
     local count = 0
-    Citizen.SetTimeout(60000, function()
+    Citizen.SetTimeout(SharedConfig.carwipeDelay, function()
         for vehicle in EnumerateVehicles() do
             local driver = GetPedInVehicleSeat(vehicle, -1)
             if not IsPedAPlayer(driver) then
