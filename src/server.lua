@@ -1,6 +1,6 @@
 vx.addCommand("carwipe", {
-    restricted = SharedConfig.restrictedGroups,
+    restricted = SharedConfig.commandGroups,
     help = "Wipe all vehicles"
 }, function()
-    vx.triggerClientEvent("cx_carwipe", -1)
+    clientEventBridge.carwipe()
 end)
